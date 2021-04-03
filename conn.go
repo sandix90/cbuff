@@ -5,8 +5,8 @@ import (
 	"github.com/gocql/gocql"
 	"github.com/golang-migrate/migrate/v4"
 	_ "github.com/golang-migrate/migrate/v4/database/cassandra"
-	"gitlab.itnap.ru/industrial_safety/cbuff/migrations"
 	bindata "github.com/golang-migrate/migrate/v4/source/go_bindata"
+	"github.com/sandix90/cbuff/migrations"
 	"github.com/scylladb/gocqlx/v2"
 	log "github.com/sirupsen/logrus"
 )
