@@ -1,4 +1,4 @@
-module gitlab.itnap.ru/industrial_safety/cbuff
+module github.com/sandix90/cbuff
 
 go 1.15
 
