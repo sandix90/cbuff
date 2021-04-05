@@ -40,6 +40,14 @@ func NewCassandraConn(cassandraConfig *CassandraConfig) (*CassandraConn, error) 
 }
 
 func (conn *CassandraConn) runSession(handler cHandler) error {
+	if conn.session.Closed() {
+		log.Warnf("current C* is closed. Creating a new one...")
+		session, err := gocqlx.WrapSession(conn.cluster.CreateSession())
+		if err != nil {
+			return err
+		}
+		conn.session = session
+	}
 	return handler(&conn.session)
 }
 
